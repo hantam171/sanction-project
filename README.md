@@ -1,6 +1,6 @@
-# 📘 Sanctions and Trade: Direct and Spillover Effects
+# Sanctions and Trade: Direct and Spillover Effects
 
-## 🔍 Research Question
+## Research Question
 This project explores how international sanctions influence trade, both for targeted countries and their land neighbors.  
 The central questions are:
 
@@ -11,7 +11,7 @@ The working hypothesis is that sanctions impose negative trade shocks on targete
 
 ---
 
-## 🧹 Data and Cleaning Process
+## Data and Cleaning Process
 
 - **Data Source:** Multiple international datasets combining trade, macroeconomic, and political indicators (1975–2019).  
 - **Unit of Analysis:** Country–year observations.
@@ -37,7 +37,7 @@ The working hypothesis is that sanctions impose negative trade shocks on targete
 
 ---
 
-## ⚙️ Research Method
+## Research Method
 
 ### 1. Baseline OLS Regression
 A linear model is estimated to identify the direct and indirect (neighbor) effects of sanctions on trade:
@@ -57,7 +57,7 @@ To capture **nonlinearities** and **heterogeneous treatment effects**:
 
 ---
 
-## 📈 Main Findings
+## Main Findings
 
 1. **Negative Effect on Targeted Countries:**  
    Sanctions significantly reduce both imports and exports, confirming the expected trade-restrictive impact.
