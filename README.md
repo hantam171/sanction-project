@@ -134,3 +134,8 @@ Notes:
 [2] The condition number is large, 7.14e+03. This might indicate that there are
 strong multicollinearity or other numerical problems.
 
+
+ML result
+
+This table show the impact of sanction on the targeted country ("sanction") and their land neighbor ("neighbor") import and export. The gifure shows that sanction positively impacts on the land neighbor and negatively impacts on the targeted country in term of trade.
+![Chart](impact direction.png)
