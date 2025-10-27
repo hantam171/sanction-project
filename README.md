@@ -134,4 +134,3 @@ Notes:
 [2] The condition number is large, 7.14e+03. This might indicate that there are
 strong multicollinearity or other numerical problems.
 
-
