@@ -68,6 +68,7 @@ To capture **nonlinearities** and **heterogeneous treatment effects**:
 3. **Robustness Across Models:**  
    Both OLS and ML–SHAP analyses consistently show these effects.
 
+<pre><code>
 Dependent var: log_imports
                             OLS Regression Results                            
 ==============================================================================
@@ -100,7 +101,9 @@ Notes:
 [1] Standard Errors are heteroscedasticity robust (HC3)
 [2] The condition number is large, 7.14e+03. This might indicate that there are
 strong multicollinearity or other numerical problems.
+</code></pre>
 
+<pre><code>
 Dependent var: log_exports
                             OLS Regression Results                            
 ==============================================================================
@@ -133,7 +136,7 @@ Notes:
 [1] Standard Errors are heteroscedasticity robust (HC3)
 [2] The condition number is large, 7.14e+03. This might indicate that there are
 strong multicollinearity or other numerical problems.
-
+</code></pre>
 
 ML result
 
