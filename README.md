@@ -68,5 +68,70 @@ To capture **nonlinearities** and **heterogeneous treatment effects**:
 3. **Robustness Across Models:**  
    Both OLS and ML–SHAP analyses consistently show these effects.
 
+Dependent var: log_imports
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:            log_imports   R-squared:                       0.835
+Model:                            OLS   Adj. R-squared:                  0.827
+Method:                 Least Squares   F-statistic:                     524.7
+Date:                Sun, 19 Oct 2025   Prob (F-statistic):               0.00
+Time:                        18:45:25   Log-Likelihood:                -7354.5
+No. Observations:                2590   AIC:                         1.495e+04
+Df Residuals:                    2470   BIC:                         1.565e+04
+Df Model:                         119                                         
+Covariance Type:                  HC3                                         
+====================================================================================
+                       coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------
+Intercept          -41.0838     16.560     -2.481      0.013     -73.541      -8.627
+sanction            -1.0513      0.282     -3.734      0.000      -1.603      -0.499
+neighbor             0.9986      0.294      3.395      0.001       0.422       1.575
+log_rgdp             1.1047      0.509      2.171      0.030       0.108       2.102
+log_pop              0.7031      0.990      0.710      0.478      -1.237       2.644
+polity2              0.1468      0.033      4.481      0.000       0.083       0.211
+==============================================================================
+Omnibus:                      312.266   Durbin-Watson:                   0.380
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             2580.445
+Skew:                           0.253   Prob(JB):                         0.00
+Kurtosis:                       7.864   Cond. No.                     7.14e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)
+[2] The condition number is large, 7.14e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+Dependent var: log_exports
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:            log_exports   R-squared:                       0.837
+Model:                            OLS   Adj. R-squared:                  0.829
+Method:                 Least Squares   F-statistic:                     533.8
+Date:                Sun, 19 Oct 2025   Prob (F-statistic):               0.00
+Time:                        18:45:25   Log-Likelihood:                -7330.4
+No. Observations:                2590   AIC:                         1.490e+04
+Df Residuals:                    2470   BIC:                         1.560e+04
+Df Model:                         119                                         
+Covariance Type:                  HC3                                         
+====================================================================================
+                       coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------
+Intercept          -46.1232     16.358     -2.820      0.005     -78.183     -14.063
+sanction            -1.0459      0.278     -3.762      0.000      -1.591      -0.501
+neighbor             1.0336      0.292      3.541      0.000       0.461       1.606
+log_rgdp             1.2662      0.509      2.490      0.013       0.269       2.263
+log_pop              0.7829      0.983      0.796      0.426      -1.144       2.709
+polity2              0.1416      0.032      4.374      0.000       0.078       0.205
+==============================================================================
+Omnibus:                      317.842   Durbin-Watson:                   0.381
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             2660.094
+Skew:                           0.264   Prob(JB):                         0.00
+Kurtosis:                       7.937   Cond. No.                     7.14e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)
+[2] The condition number is large, 7.14e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
 
 
