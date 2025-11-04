@@ -1,5 +1,12 @@
 # Sanctions and Trade: Direct and Spillover Effects
 
+International sanctions can be interpreted as shocks that increase trade costs, as targeted countries face restrictions on exporting to or importing from certain partners. Moreover, the impact of sanctions is not confined to the targeted economy alone. Neighboring countries that share land borders with sanctioned states may also be affected through two main channels. First, sanctions may disrupt regional trade routes or increase transportation and compliance costs, thereby reducing trade flows(Kaempfer and Lowenberg, 2007). Second, these neighbors may benefit from trade diversion, as sanctioned countries reroute their demand or supply through nearby markets (Crozet et al.,2021). 
+
+Numerous studies have examined the impact of sanctions on targeted countries (Yang et al., 2009; Haidar, 2017; Gharehgozli, 2017). Overall, the existing literature consistently finds that most sanctions significantly reduce the economic activities of the sanctioned states. However, the potential spillover effects of sanctions on neighboring countries have received far less attention. Neighbors that share land borders with sanctioned states may be affected through two main channels. On one hand, sanctions can disrupt regional trade routes or increase transportation and compliance costs, thereby reducing overall trade flows. On the other hand, neighboring economies may benefit from trade diversion, as sanctioned countries redirect their trade through nearby markets to bypass restrictions.
+
+Recently, Vincenzo et al. (2023) employed panel data to estimate the impact of sanctions on land-bordering countries that are not themselves subject to any sanction regime. Their findings indicate that sanctions can generate measurable indirect effects on neighboring economies, highlighting the regional dimension of sanction policies. Building on this approach, our study also uses panel data to estimate both the direct effects of sanctions on targeted countries and the spillover effects on their neighbors. Despite the growing attention, the broader mechanisms underlying these spillovers—such as heterogeneity across sanction types, sender countries, and economic linkages—remain relatively underexplored, motivating our analysis.
+
+
 ## Research Question
 This project explores how international sanctions influence trade, both for targeted countries and their land neighbors.  
 The central questions are:
@@ -10,8 +17,17 @@ The central questions are:
 The working hypothesis is that sanctions impose negative trade shocks on targeted economies, while neighboring countries may partially benefit through redirected trade and substitution effects.
 
 ---
-
 ## Data and Cleaning Process
+
+We use a panel dataset covering 72 countries over 44 years, from 1975 to 2018, to analyze the direct and spillover effects of sanctions on trade. Our main dependent variables are the logarithms of unilateral imports and exports, obtained annually from the World Bank Development Indicators. A sanctioned country is defined as one subject to at least one type of sanction. Neighboring countries are defined based on first-order contiguity, meaning a country must share a land border with at least one sanctioned country. We also include control variables such as GDP, population, and polity scores to account for economic size and political characteristics.
+
+The dataset includes 2,590 observations. Approximately 48.0% of observations are subject to at least one sanction, 72.1% have at least one neighboring country under sanction, and 40.2% experience both conditions simultaneously, highlighting the importance of studying both direct and spillover effects of sanctions.
+
+### Number of Sanctions by Type
+![](result/sanctions_by_type.png)
+
+### Number of Sanctions by Sender
+![](result/sanctions_by_sender.png)
 
 - **Data Source:** Multiple international datasets combining trade, macroeconomic, and political indicators (1975–2019).  
 - **Unit of Analysis:** Country–year observations.
@@ -34,6 +50,40 @@ The working hypothesis is that sanctions impose negative trade shocks on targete
 4. **Generate dummy variables** for `sanction` and `neighbor`.  
 5. **Remove missing or inconsistent entries** to ensure balanced panel data.  
 6. Validate that each country has both sanctioned and non-sanctioned periods to enable within-country comparisons.
+
+
+
+===========================================================
+                 Panel Data Summary Statistics
+===========================================================
+Variable           Count     Mean       Std       Min     25%      50%      75%      Max
+-------------------------------------------------------------------------------------------
+log_imports_gdp    2590    3.2680     1.0088     0.0    3.0910  3.4340  3.8501  5.2575
+log_imports        2590   17.5317    10.1839     0.0   18.3590 22.6202 24.1617 28.3258
+log_exports        2590   17.4262    10.1466     0.0   17.4766 22.4207 24.1375 28.4906
+log_exports_gdp    2590    3.0948     1.0365     0.0    2.7081  3.2581  3.7377  5.2883
+polity2            2590    2.2008     7.1122   -10.0   -6.0000  5.0000  9.0000  10.0000
+sanction           2590    0.4803     0.4997     0.0    0.0000  0.0000  1.0000  1.0000
+neighbor           2590    0.7212     0.4485     0.0    0.0000  1.0000  1.0000  1.0000
+log_rgdp           2590   24.2945     1.9569   19.7983 22.9101 24.1489 25.9109 30.2332
+log_gdppc          2590    8.2533     1.3091    5.2535  7.2275  8.2037  9.0101 11.6300
+log_pop            2590   16.0469     1.7344   12.7018 14.9416 16.0844 17.0865 21.0617
+===========================================================
+
+
+
+
+## Conceptual framework
+
+To estimate the direct and spillover effects of sanctions on trade, we specify the following panel regression model:
+
+```math
+Trade_{it} = alpha + beta_1 * Sanction_{it} + beta_2 * Neighbor_{it} + gamma * X_{it} + mu_i + lambda_t + epsilon_{it},
+```
+where `Trade_{it}` denotes the unilateral trade outcome of country i in year t, measured as the log of imports, exports. `Sanction_{it}` is a dummy variable equal to 1 if country i is subject to at least one sanction—financial, military, trade, arms, or travel—in year t, and 0 otherwise. `Neighbor_{it}` is a dummy variable equal to 1 if at least one land-border neighbor of country i is under sanction in year t, and 0 otherwise. `X_{it}` is a vector of control variables capturing economic size and other characteristics, such as log GDP, log population, and polity score. `mu_i` and `lambda_t` represent country and year fixed effects, respectively, controlling for time-invariant country characteristics and global shocks common to all countries in a given year. Finally, `epsilon_{it}` is the error term. In this specification, `beta_1` captures the direct impact of sanctions on the targeted country, while `beta_2` captures the spillover effect on neighboring countries, reflecting potential trade diversion or regional disruption, in otheword benefit or lost to the neighboring.
+
+
+
 
 ---
 
@@ -67,6 +117,8 @@ To capture **nonlinearities** and **heterogeneous treatment effects**:
 
 3. **Robustness Across Models:**  
    Both OLS and ML–SHAP analyses consistently show these effects.
+
+## OLS Regression Results
 
 <pre><code>
 Dependent var: log_imports
@@ -137,6 +189,7 @@ Notes:
 [2] The condition number is large, 7.14e+03. This might indicate that there are
 strong multicollinearity or other numerical problems.
 </code></pre>
+git pull origin main --rebase
 
 ML result
 
