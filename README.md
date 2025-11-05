@@ -75,7 +75,7 @@ The dataset includes 2,590 observations. Approximately 48.0% of observations are
 
 ## Conceptual framework
 
-To estimate the direct and spillover effects of sanctions on trade, we specify the following panel regression model:
+To estimate the direct and spillover effects of sanctions on trade, we specify the following panel regression model (following Vincenzo et al.,2023):
 
 ```math
 Trade_{it} = alpha + beta_1 * Sanction_{it} + beta_2 * Neighbor_{it} + gamma * X_{it} + mu_i + lambda_t + epsilon_{it},
