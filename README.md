@@ -220,49 +220,59 @@ The effects on neighboring countries are more nuanced. Neighboring countries can
 
 The United States, as a large economic power, exerts the highest marginal impact on target exports compared to other senders. This highlights that the economic weight of the sender plays a significant role in amplifying the effect of sanctions, although the type of sanction and regional dynamics also matter.
 
-### Impact of Sanctions on Imports Of the target and Neighboring
+## Impact of Sanctions on Imports
 
-| sanction_type | count | mean_shap_sanction | mean_shap_neighbor |
-|---|---|---|---|
-| arms_sanction | 2055 | -0.097705 | 0.000589 |
-| financial_sanction | 3845 | -0.102344 | 0.077659 |
-| military_sanction | 2715 | -0.092903 | 0.132733 |
-| trade_sanction | 2690 | -0.100229 | 0.030465 |
-| travel_sanction | 950 | -0.097838 | -0.061476 |
+### By Sanction Type
 
+========================================================
+Sanction Type       Count    Mean SHAP (Target)    Mean SHAP (Neighbor)
+arms_sanction       2055     -0.097705             0.000589
+financial_sanction  3845     -0.102344             0.077659
+military_sanction   2715     -0.092903             0.132733
+trade_sanction      2690     -0.100229             0.030465
+travel_sanction     950      -0.097838             -0.061476
+========================================================
 
-### Impact of Sanctions on Imports Of the target and Neighboring by sanction sender
+### By Sanction Sender
 
-| sanction_type | count | mean_shap_sanction | mean_shap_neighbor |
-|---------------|-------|------------------|------------------|
-| CAN_sanction  | 2290  | -0.098819        | 0.135576         |
-| DEU_sanction  | 1985  | -0.096510        | 0.109663         |
-| EU_sanction   | 2050  | -0.096875        | 0.111950         |
-| FRA_sanction  | 1880  | -0.095147        | 0.111764         |
-| GBR_sanction  | 1965  | -0.096030        | 0.115086         |
-| ITA_sanction  | 1860  | -0.094894        | 0.112465         |
-| JPN_sanction  | 1065  | -0.097476        | 0.075173         |
-| USA_sanction  | 5755  | -0.099955        | 0.086282         |
+========================================================
+Sanction Sender     Count    Mean SHAP (Target)    Mean SHAP (Neighbor)
+CAN_sanction        2290     -0.098819             0.135576
+DEU_sanction        1985     -0.096510             0.109663
+EU_sanction         2050     -0.096875             0.111950
+FRA_sanction        1880     -0.095147             0.111764
+GBR_sanction        1965     -0.096030             0.115086
+ITA_sanction        1860     -0.094894             0.112465
+JPN_sanction        1065     -0.097476             0.075173
+USA_sanction        5755     -0.099955             0.086282
+========================================================
 
-### Impact of Sanctions on Exports Of the target and Neighboring by sanction type
+---
 
-| sanction_type     | count | mean_shap_sanction | mean_shap_neighbor |
-|------------------|-------|------------------|------------------|
-| arms_sanction     | 2055  | -0.066753        | -0.005502        |
-| financial_sanction| 3845  | -0.069448        | 0.064068         |
-| military_sanction | 2715  | -0.064162        | 0.116413         |
-| trade_sanction    | 2690  | -0.067301        | 0.026802         |
-| travel_sanction   | 950   | -0.065298        | -0.057268        |
+## Impact of Sanctions on Exports
 
-### Impact of Sanctions on Exports Of the target and Neighboring by sanction sender
+### By Sanction Type
 
-| sanction_type  | count | mean_shap_sanction | mean_shap_neighbor |
-|----------------|-------|------------------|------------------|
-| CAN_sanction   | 2290  | -0.067086        | 0.120200         |
-| DEU_sanction   | 1985  | -0.067442        | 0.095745         |
-| EU_sanction    | 2050  | -0.067558        | 0.097706         |
-| FRA_sanction   | 1880  | -0.067138        | 0.097787         |
-| GBR_sanction   | 1965  | -0.067316        | 0.100839         |
-| ITA_sanction   | 1860  | -0.067009        | 0.098590         |
-| JPN_sanction   | 1065  | -0.066569        | 0.066425         |
-| USA_sanction   | 5755  | -0.068409        | 0.072539         |
+========================================================
+Sanction Type       Count    Mean SHAP (Target)    Mean SHAP (Neighbor)
+arms_sanction       2055     -0.066753             -0.005502
+financial_sanction  3845     -0.069448             0.064068
+military_sanction   2715     -0.064162             0.116413
+trade_sanction      2690     -0.067301             0.026802
+travel_sanction     950      -0.065298             -0.057268
+========================================================
+
+### By Sanction Sender
+
+========================================================
+Sanction Sender     Count    Mean SHAP (Target)    Mean SHAP (Neighbor)
+CAN_sanction        2290     -0.067086             0.120200
+DEU_sanction        1985     -0.067442             0.095745
+EU_sanction         2050     -0.067558             0.097706
+FRA_sanction        1880     -0.067138             0.097787
+GBR_sanction        1965     -0.067316             0.100839
+ITA_sanction        1860     -0.067009             0.098590
+JPN_sanction        1065     -0.066569             0.066425
+USA_sanction        5755     -0.068409             0.072539
+========================================================
+
